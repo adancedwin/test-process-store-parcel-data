@@ -64,35 +64,15 @@ class Xml::ProcessSalesData
         invoice.parcels.build
         parcel = invoice.parcels[index]
         parcel.quantity = data['ItemQty'].to_i
-        parcel.price = data['ParcelPrice'].to_f
+        parcel.price = data['ParcelPrice'].to_d
         parcel.parcel_code = data['ParcelCode']
       end
     else
       invoice.parcels.build
       parcel = invoice.parcels.first
       parcel.quantity = invoice_data['ItemQty'].to_i
-      parcel.price = invoice_data['ParcelPrice'].to_f
+      parcel.price = invoice_data['ParcelPrice'].to_d
       parcel.parcel_code = invoice_data['ParcelCode']
     end
   end
 end
-
-#{"FileAttribute"=>
-#  {"GUID"=>"16BA036FCC3D4AF7E05378A06D0ADD38"},
-#"FileData"=>
-#  {"Batch"=>{"BatchID"=>"844986", "CreationDate"=>"21.05.2015"},
-#  "Invoice"=>
-#    [
-#      {"InvoiceOperation"=>
-#        {"CompanyCode"=>"1234", "InvoiceOperationNumber"=>"45734328", "InvoiceOperationDate"=>"21.05.2015"},
-#      "InvoiceData"=>{"ParcelCode"=>"114211372050132", "ItemQty"=>"1", "ParcelPrice"=>"3493"}},
-#      {"InvoiceOperation"=>
-#        {"CompanyCode"=>"1234", "InvoiceOperationNumber"=>"45733790", "InvoiceOperationDate"=>"21.05.2015"},
-#      "InvoiceData"=>[
-#                       {"ParcelCode"=>"114180267042132", "ItemQty"=>"1", "ParcelPrice"=>"3493"},
-#                       {"ParcelCode"=>"114207400042141", "ItemQty"=>"1", "ParcelPrice"=>"6293"}
-#                     ]
-#      }
-#    ]
-#  }
-#}

@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_151305) do
     t.integer "invoice_id", null: false
     t.string "parcel_code"
     t.integer "quantity"
-    t.float "price"
+    t.decimal "price", precision: 7, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["parcel_code"], name: "index_invoice_parcels_on_parcel_code", unique: true

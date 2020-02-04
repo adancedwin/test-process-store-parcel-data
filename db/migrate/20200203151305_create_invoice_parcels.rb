@@ -5,7 +5,7 @@ class CreateInvoiceParcels < ActiveRecord::Migration[6.0]
       t.string :parcel_code
       t.index :parcel_code, unique: true
       t.integer :quantity
-      t.float :price
+      t.decimal :price, precision: 7, scale: 2
 
       t.timestamps
     end
