@@ -34,3 +34,11 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+config/database.yml
+config/credentials.yml.enc
+
+.idea
+dump.rdb
+
+db/schema.rb
